@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>מערכת ניהול - המרכז לכלבי נחייה</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=1024">
+    <!-- CSS -->
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body id="bodyPlatform">
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="HomePage.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="HomePage.html">דף הבית <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AllProducts.html">לכל התוצרים</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Templates.html">תבניות</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="ml-md-auto text-center">
+            <span class="navbar-text mr-3">שלום admin</span>
+            <a class="nav-link" href="#" id="logoutLink">להתנתקות</a>
+        </div>
+    </nav>
+
+
+    <!-- Modal settings -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">הגדרות לומדה</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="unitSettingsForm">
+                        <div class="mb-3">
+                            <label for="inputTitle" class="form-label">שם הלומדה</label>
+                            <input type="text" class="form-control" id="inputTitle">
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputDescription" class="form-label">תיאור קצר</label>
+                            <textarea class="form-control" id="inputDescription" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectStatus" class="form-label">קטגוריה</label>
+                            <select class="form-select" id="selectStatus">
+                                <option selected>בחר אפשרות...</option>
+                                <option value="1">משפחות אומנה</option>
+                                <option value="2">מתנדבים</option>
+                                <option value="3">לקוחות</option>
+                                <option value="4">עובדי ארגון</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">סגור</button>
+                    <button type="button" class="btn custom-enter-button" id="saveChangesButton">שמור שינויים</button>
+                </div>
+                <div class="unit-success-message alert alert-success mt-2" role="alert" style="display: none">
+                    העריכה הושלמה בהצלחה
+                </div>
+                <div class="unit-error-message alert alert-danger mt-2" role="alert" style="display: none">
+                    נכשלה העריכה, אנא נסה שוב.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="unit-all-pages-container container" style="position: relative; padding-top: 50px;">
+        <div class="header-container" style="position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 10px; z-index: 10;">
+            <!-- Settings Button on the left -->
+            <button id="settingsButton" class="custom-enter-button btn mb-2" style="position: absolute; left: 10px;">הגדרות לומדה</button>
+
+            <!-- Header Title centered on the page -->
+            <h1 style="position: absolute; left: 50%; transform: translateX(-50%); margin: 0;">דפי הלומדה</h1>
+
+            <!-- Back Button on the right -->
+            <button class="Back custom-enter-button" style="width: 40px; height: 40px;" onclick="history.back()">
+                <img class="Back" src="images/black-arrow.png" alt="Go Back" style="vertical-align: middle;">
+            </button>
+        </div>
+
+        <!-- Subheader centered below header -->
+        <h2 style="text-align: center; margin-top: 20px; margin-bottom: 10px;">כדי להתחיל בעריכת הלומדה בחרו את הדף אותו תרצו לערוך</h2>
+
+        <div class="row" id="UnitAllpagesContainer">
+            <!-- Cards will be dynamically added here -->
+        </div>
+    </div>
+
+
+
+
+
+    <!--<div class="container" id="UnitAllpagesContainer"></div>-->
+
+
+    <footer class="footerPlatform text-center bg-light">
+        <div class="container">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-md-6 text-start">
+                        <span class="footer-item">© תוצר זה פותח במסגרת תואר ראשון בפקולטה לטכנולוגיות למידה, HIT</span>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="mr-3 footer-item clickable" data-bs-toggle="modal" data-bs-target="#aboutModal">אודות</span>
+                        <a href="https://www.hit.ac.il" class="mr-3 footer-item clickable text-decoration-none text-black">לאתר הארגון</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="aboutModalLabel">אודות</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700; font-size:35px;">DogControl</p>
+                    <p class="mb-4">פותח עבור המרכז ישראלי לכלבי נחייה</p>
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700;">צוות הפרוייקט:</p>
+                    <p class="mb-4">אדווה כהן ויובל רז</p>
+
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700;"> מנחים: </p>
+                    <p class="mb-4">ד״ר דן כהן וקס וד״ר מאיה אושר  </p>
+                    <p class="mb-4">פרויקט גמר, תשפ״ד - 2024</p>
+                    <p>
+                        <a href="https://www.hit.ac.il/academic/instructional-technologies/" target="_blank" class="text-decoration-none">
+                            הפקולטה לטכנולוגיות למידה
+                        </a>
+                    </p>
+                    <img src="images/logoTLM.gif" alt="Logo" class="img-fluid mt-4" style="max-width: 200px;">
+                    <p class="mt-4">© כל הזכויות שמורות למכון טכנולוגי חולון HIT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html >

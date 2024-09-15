@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <title>מערכת ניהול - המרכז לכלבי נחייה</title>
+    <meta name="viewport" content="width=1024">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <!-- CSS -->
+    <link href="css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="Elearning/jScripts/jquery-1.12.0.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+    <!--add it to the view page-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body id="bodyPlatform" onload="loadPageContent()">
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="HomePage.html"><img src="images/logo.png" alt="Logo" class="logo"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" style="color:#FBA000">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color:#FBA000" href="HomePage.html">דף הבית <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#FBA000" href="AllProducts.html">לכל התוצרים</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#FBA000" href="Templates.html">תבניות</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="ml-md-auto text-center">
+            <span class="navbar-text mr-3" style="color:#FBA000">שלום admin</span>
+            <a class="nav-link" href="#" id="logoutLink">להתנתקות</a>
+        </div>
+    </nav>
+
+
+  
+
+
+
+    <main>
+        <div class="header-container">
+            <h1 class="products">עריכת הלומדה</h1>
+            <button class="Back custom-enter-button" style="width:40px;height:40px; position:absolute;" onclick="history.back()">
+                <img class="Back" src="images/black-arrow.png" alt="Go Back">
+            </button>
+        </div>
+    </main>
+
+
+
+    <div class="container-edit">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card card_edit double-height-card">
+                    <div class="card-body">
+
+                        <div class="unit-container"></div>
+
+                        <!--here-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="unit-success-message alert alert-success mt-2" role="alert" style="display: none">
+            העריכה הושלמה בהצלחה
+        </div>
+        <div class="unit-error-message alert alert-danger mt-2" role="alert" style="display: none">
+            נכשלה העריכה, אנא נסה שוב.
+        </div>
+        <!--<button class="btn custom-enter-button btn-lg d-block mx-auto" onclick="onUnitEdit(event)" style="margin-top: 20px;">עריכת הלומדה</button>-->
+        <button class="btn custom-enter-button btn-lg d-block mx-auto" onclick="onUnitEdit(event)" style="margin-top: 20px; background: linear-gradient(90deg, #FFD868, #FBA000); color: #262626; border: none; padding: 10px; font-size: 16px; border-radius: 10px; box-shadow: 0px 3px rgba(139, 69, 19, 10); width: auto; cursor: pointer; text-decoration: none; font-weight: 600;">
+            עריכת הלומדה
+        </button>
+
+    </div>
+
+
+
+
+
+
+
+    <footer class="footerPlatform text-center bg-light">
+        <div class="container">
+            <div class="p-3">
+                <div class="row">
+                    <div class="col-md-6 text-start">
+                        <span class="footer-item">© תוצר זה פותח במסגרת תואר ראשון בפקולטה לטכנולוגיות למידה, HIT</span>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <span class="mr-3 footer-item clickable" data-bs-toggle="modal" data-bs-target="#aboutModal">אודות</span>
+                        <a href="https://www.hit.ac.il" class="mr-3 footer-item clickable text-decoration-none text-black">לאתר הארגון</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title w-100" id="aboutModalLabel">אודות</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700; font-size:35px;">DogControl</p>
+                    <p class="mb-4">פותח עבור המרכז ישראלי לכלבי נחייה</p>
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700;">צוות הפרוייקט:</p>
+                    <p class="mb-4">אדווה כהן ויובל רז</p>
+
+                    <p class="mb-4" style="color: #FBA000; font-weight: 700;"> מנחים: </p>
+                    <p class="mb-4">ד״ר דן כהן וקס וד״ר מאיה אושר  </p>
+                    <p class="mb-4">פרויקט גמר, תשפ״ד - 2024</p>
+                    <p>
+                        <a href="https://www.hit.ac.il/academic/instructional-technologies/" target="_blank" class="text-decoration-none">
+                            הפקולטה לטכנולוגיות למידה
+                        </a>
+                    </p>
+                    <img src="images/logoTLM.gif" alt="Logo" class="img-fluid mt-4" style="max-width: 200px;">
+                    <p class="mt-4">© כל הזכויות שמורות למכון טכנולוגי חולון HIT</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
+
+
